@@ -1,0 +1,62 @@
+/* One stylesheet for every page. No build step, no external fonts, no CDN —
+   a privacy policy that pulled in a third-party font would undercut its own
+   first sentence. */
+:root {
+  --bg: #FFFFFF;
+  --fg: #0F172A;
+  --muted: #475569;
+  --line: #E2E8F0;
+  --accent: #10B981;
+  --card: #F8FAFC;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0B0F19;
+    --fg: #E2E8F0;
+    --muted: #94A3B8;
+    --line: #1E293B;
+    --accent: #34D399;
+    --card: #111827;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 40px 22px 80px; }
+header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 28px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+.mark {
+  width: 30px; height: 30px; border-radius: 8px; flex: none;
+  background: linear-gradient(135deg, #10B981, #3B82F6);
+  display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 15px;
+}
+.brand strong { font-size: 16px; letter-spacing: -0.2px; }
+h1 { font-size: 28px; line-height: 1.25; letter-spacing: -0.5px; margin: 26px 0 6px; }
+h2 { font-size: 18px; margin: 32px 0 8px; letter-spacing: -0.2px; }
+.eff { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
+p, li { color: var(--fg); }
+ul { padding-left: 20px; }
+li { margin: 6px 0; }
+a { color: var(--accent); }
+.lede { font-size: 17px; color: var(--muted); }
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 16px 18px; margin: 20px 0;
+}
+.card p:first-child { margin-top: 0; }
+.card p:last-child { margin-bottom: 0; }
+nav.links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+nav.links a {
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 7px 14px; text-decoration: none; font-size: 14px; font-weight: 600;
+}
+footer {
+  margin-top: 48px; padding-top: 18px;
+  border-top: 1px solid var(--line); color: var(--muted); font-size: 13px;
+}
+code { background: var(--card); padding: 1px 5px; border-radius: 4px; font-size: 90%; }
